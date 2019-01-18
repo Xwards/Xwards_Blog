@@ -15,7 +15,7 @@ import PostContent from '../components/PostContent';
 import PostFullFooter from '../components/PostFullFooter';
 import PostFullFooterRight from '../components/PostFullFooterRight';
 import ReadNextCard from '../components/ReadNextCard';
-import Subscribe from '../components/subsribe/Subscribe';
+// import Subscribe from '../components/subsribe/Subscribe';
 import Wrapper from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import { colors } from '../styles/colors';
@@ -272,7 +272,7 @@ const PageTemplate: React.FunctionComponent<PageTemplateProps> = props => {
                   <PostFullMetaDate dateTime={post.frontmatter.date}>
                     {post.frontmatter.userDate}
                   </PostFullMetaDate>
-                  {post.frontmatter.tags &&
+                  {/* {post.frontmatter.tags &&
                     post.frontmatter.tags.length > 0 && (
                       <>
                         <DateDivider>/</DateDivider>
@@ -280,7 +280,7 @@ const PageTemplate: React.FunctionComponent<PageTemplateProps> = props => {
                           {post.frontmatter.tags[0]}
                         </Link>
                       </>
-                    )}
+                    )} */}
                 </PostFullMeta>
                 <PostFullTitle>{post.frontmatter.title}</PostFullTitle>
               </PostFullHeader>
@@ -296,12 +296,13 @@ const PageTemplate: React.FunctionComponent<PageTemplateProps> = props => {
               <PostContent htmlAst={post.htmlAst} />
 
               {/* The big email subscribe modal content */}
-              {config.showSubscribe && <Subscribe title={config.title} />}
+              {/* Suscribe in full post page */}
+              {/* {config.showSubscribe && <Subscribe title={config.title} />} */}
 
-              <PostFullFooter>
+              {/* <PostFullFooter>
                 <AuthorCard author={post.frontmatter.author} />
                 <PostFullFooterRight authorId={post.frontmatter.author.id} />
-              </PostFullFooter>
+              </PostFullFooter> */}
             </article>
           </div>
         </main>
@@ -310,9 +311,11 @@ const PageTemplate: React.FunctionComponent<PageTemplateProps> = props => {
         <aside className={`read-next ${outer}`}>
           <div className={`${inner}`}>
             <ReadNextFeed>
-              {props.data.relatedPosts && (
+              {/* {props.data.relatedPosts && (
                 <ReadNextCard tags={post.frontmatter.tags} relatedPosts={props.data.relatedPosts} />
-              )}
+              )} */}
+
+              {/* Removed the card showing posts with the same tags */}
 
               {props.pageContext.prev && <PostCard post={props.pageContext.prev} />}
               {props.pageContext.next && <PostCard post={props.pageContext.next} />}
@@ -329,7 +332,7 @@ export default PageTemplate;
 
 export const query = graphql`
   query($slug: String, $primaryTag: String) {
-    logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+    logo: file(relativePath: { eq: "img/xwards_400.png" }) {
       childImageSharp {
         fixed {
           ...GatsbyImageSharpFixed
