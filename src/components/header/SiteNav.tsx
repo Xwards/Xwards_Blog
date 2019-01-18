@@ -66,7 +66,7 @@ const NavStyles = css`
     display: block;
     margin: 0;
     padding: 10px 12px;
-    color: #fff;
+    color: #000;
     opacity: 0.8;
   }
 
@@ -99,8 +99,8 @@ const SocialLinks = styled.div`
 const SubscribeButton = styled.a`
   display: block;
   padding: 4px 10px;
-  border: #fff 1px solid;
-  color: #fff;
+  border: #000 1px solid;
+  color: #000;
   font-size: 1.2rem;
   line-height: 1em;
   border-radius: 10px;
@@ -149,7 +149,8 @@ class SiteNav extends React.Component<SiteNavProps, SiteNaveState> {
               <Link to="/about">About</Link>
             </li> */}
             <li role="menuitem">
-              <Link to="/tags/getting-started/">Getting Started</Link>
+              {/* <Link to="/tags/getting-started/">Official Website</Link> */}
+              <a href="https://www.xwards.com" target="_blank" title="Xwards Official Website">Official Website</a>
             </li>
           </ul>
         </SiteNavLeft>
@@ -177,7 +178,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNaveState> {
                 <Twitter />
               </a>
             )}
-            {config.instagram && (
+            {/* {config.instagram && (
               <a
                 className={`${SocialLink}`}
                 href={config.instagram}
@@ -187,14 +188,14 @@ class SiteNav extends React.Component<SiteNavProps, SiteNaveState> {
               >
                 <Instagram />
               </a>
-            )}
+            )} */}
           </SocialLinks>
-          {config.showSubscribe && (
+          {/* {config.showSubscribe && (
             <SubscribeButton onClick={this.openModal}>Subscribe</SubscribeButton>
           )}
           {config.showSubscribe && (
             <SubscribeModal ref={this.subscribe} />
-          )}
+          )} */}
         </SiteNavRight>
       </nav>
     );
